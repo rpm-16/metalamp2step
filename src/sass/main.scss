@@ -1,15 +1,22 @@
 //common styles
 @import '_fonts';
 @import '_colors';
+@import '_margins';
 
 //layouts
 @import '../pug/layouts/uikit/uikit';
 
-
 //pages
 @import '../pug/pages/colorstypes/colorstypes';
+@import '../pug/pages/formelements/formelements';
 
 //blocks
 @import '../pug/blocks/uiheader/uiheader';
 @import '../pug/blocks/uikit-colors/uikit-colors';
 @import '../pug/blocks/uikit-types/uikit-types';
+@import '../pug/blocks/form-group/form-group';
+@import '../pug/blocks/input/input';
+@import '../pug/blocks/input-dropdown/input-dropdown';
+@import '../pug/blocks/date-dropdown/date-dropdown';
+@import '../pug/blocks/checkbox/checkbox';
+@import '../pug/blocks/radiobuttons/radiobuttons';

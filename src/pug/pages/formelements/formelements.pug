@@ -1,0 +1,64 @@
+extends ../../layouts/uikit/uikit.pug
+
+include ../../blocks/form-group/form-group
+include ../../blocks/input/input
+include ../../blocks/input-dropdown/input-dropdown
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/checkbox/checkbox
+include ../../blocks/radiobuttons/radiobuttons
+
+block head
+	- let title = "Form elements";
+
+	block variables
+			- let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
+			- let items1 = [{title: "Спальни", count: 2}, {title: "Кровати", count: 0}, {title:"Ванные комнаты", count: 4}];
+
+block content 
+	.formelements-container
+		.col-3x.w320
+			.row
+				+form-group({note: "default", title: "Text Field", type: ""})
+				.row
+					+input({class: "", id: "", name:"none", placeholder:"Email", type:"email"})
+			.row
+				+form-group({note: "hover / focus", title: "Text Field", type: ""})
+				.row
+					+input({class: "input-group__input--hover", name: "hover", placeholder: "This is pretty awesome", type: "text"})
+			.row
+				+form-group({title: "Dropdown", note: ""}) 
+				.row
+					+input-dropdown({name: "", type: "text", placeholder: "Сколько гостей ", items: items, buttons: true, id: "" })
+			.row.mt23 
+				+form-group({title: "Masked Text Field", note: ""})
+				.row
+					+input({mclass: "", name: "", type: "text", placeholder: "ДД.ММ.ГГГГ"})
+			.row.mt35
+				+form-group({title: "", note: " "})
+				.row.flex
+					.col-2x.w150
+						+date-dropdown( [{mclass: "w150",label:'date dropdown', placeholder: "ДД.ММ.ГГГГ"}])
+					.col-2x.w150
+						+date-dropdown([{mclass: "w150",label:"date dropdown", placeholder: "19 авг - 23 авг"}])
+			.row.mt40
+				+form-group({title: "filter date dropdown", note: ""})
+				.row.w266.mt-4
+					+date-dropdown([{mclass: "",label:"", placeholder: "19 авг - 23 авг"}])
+			.row.mt40
+				+form-group({title: "Subscription Text field", note: ""})
+				.row.w266
+					+input({mclass: '', placeholder: "Email", icon: ""})
+
+		.col3x.w320.ml126
+			.row
+				+form-group({title: "checkbox buttons", note: ""})
+				.row
+					+checkbox({type: "checkbox" }, [{label: "Можно курить" }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)", checked: true} ])
+			.row.mt42
+				+form-group({title: "radio buttons", note: ""})
+				.row
+					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }])
+					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Женщина"} ])
+			.row
+
+		.col3x.w320

@@ -1,0 +1,25 @@
+.formelements-container {
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: flex-start;
+    //justify-content: space-between;
+    max-width: 1160px;
+    margin: 3px auto;
+    box-sizing: border-box;
+}
+.col-2x{
+}
+.col-3x {
+     .row {
+         margin-bottom: 20px;
+     }
+}
+
+.col-3x-2x {
+    flex: 1 0 auto; 
+    max-width: 710px;
+    min-width: 320px;
+    margin-bottom: 100px;
+}
+
+
