@@ -1,3 +1,15 @@
+//common styles
+@import '_fonts';
+@import '_colors';
+
 //layouts
 @import '../pug/layouts/uikit/uikit';
+
+
+//pages
 @import '../pug/pages/colorstypes/colorstypes';
+
+//blocks
+@import '../pug/blocks/uiheader/uiheader';
+@import '../pug/blocks/uikit-colors/uikit-colors';
+@import '../pug/blocks/uikit-types/uikit-types';

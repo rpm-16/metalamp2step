@@ -1,0 +1,29 @@
+.uikit-container {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 290px;     
+    margin: 0 auto;
+    margin-top: 5px;
+
+    .col-2x {
+        width: 510px;
+        align-self: flex-start;
+        justify-content: flex-start;
+        .type-list {
+            .type-list__item:last-child {
+                letter-spacing: 0px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .uikit-container {
+        flex-direction: column; 
+        .col-2x {
+            width: auto;
+            justify-content: flex-start;
+        }
+    }
+}

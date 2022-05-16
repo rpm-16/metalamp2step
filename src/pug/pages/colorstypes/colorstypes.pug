@@ -1,7 +1,29 @@
 extends ../../layouts/uikit/uikit.pug
 
+include ../../blocks/uikit-colors/uikit-colors
+include ../../blocks/uikit-types/uikit-types
+
 block head
 	- let title = "Colors & Types";
 
-block content 
-	main dfdsf
+block content
+	-  let listColors = [{name: 'Dark Shade 100%', hex: '#1F2041', color: '#1F2041'},
+	- 	{name: 'Dark Shade 75%', hex: '#1F2041', color: 'rgba(31, 32, 65, 0.75);'},
+	- 	{name: 'Dark Shade 50%', hex: '#1F2041', color:"rgba(31, 32, 65, 0.5);"}, 
+	- 	{name: 'Dark Shade 25%', hex: '#1F2041', color: "rgba(31, 32, 65, 0.25);"}, 
+	- 	{name: 'Dark Shade 5%', hex: '#1F2041', color: "rgba(31, 32, 65, 0.05);"}, 
+	- 	{name: 'Purple', hex: '#BC9CFF', color: '#BC9CFF'}, 
+	- 	{name: 'Green', hex: '#6FCF97', color: '#6FCF97'}];
+
+	-  let listTypes = [ {name: 'H1', desc: 'This one is the sub-section or widget title'},
+	-	{name: 'H2', desc: 'Next one is the item title inside widgets'}, 
+	-	{name: 'H3', desc: 'THIS IS A LABEL OR CTA TEXT'},
+	- 	{name: 'Body', desc: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'}
+	-	];
+			
+	main
+		.uikit-container
+			.col-2x 
+				+list-colors(listColors)
+			.col-2x 
+				+list-types(listTypes)
