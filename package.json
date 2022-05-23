@@ -1,7 +1,7 @@
 {
   "name": "metalamp2step",
   "version": "1.0.0",
-  "description": "",
+  "description": "Верстка на конкурс от MetaLamp на FrontendDev-a. Вестка с приминением \r таких инструментов как Figma, Git, Pug, Sass, Webpack, Pixel Perfect ..",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development --watch",
