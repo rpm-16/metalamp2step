@@ -1,11 +1,10 @@
 mixin form-group(args)
-  - let objArgs = args
-    
-    .form-group(class= objArgs.type)
-      .form-group__wrapper
-        .form-group__title= objArgs.title
+	- let objArgs = args
 
-        if objArgs.note
-         .form-group__note= objArgs.note
-      
-      .form-group__body
+	.form-group(class= objArgs.type)
+		.form-group__wrapper
+			.form-group__title= objArgs.title
+			if objArgs.note
+			.form-group__note= objArgs.note
+		.form-group__body
+			block

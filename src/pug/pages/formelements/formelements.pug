@@ -25,125 +25,93 @@ block head
 
 block content 
 	.formelements-container
-		.col-3x.w320
-			.row
+		.row
+			.col-3x
 				+form-group({note: "default", title: "Text Field", type: ""})
-				.row
 					+input({class: "", id: "", name:"none", placeholder:"Email", type:"email"})
-			.row
 				+form-group({note: "hover / focus", title: "Text Field", type: ""})
-				.row
 					+input({class: "input-group__input--hover", name: "hover", placeholder: "This is pretty awesome", type: "text"})
-			.row
 				+form-group({title: "Dropdown", note: ""}) 
-				.row
 					+input-dropdown({name: "", type: "text", placeholder: "Сколько гостей ", items: items, buttons: true, id: "" })
-			.row.mt23 
 				+form-group({title: "Masked Text Field", note: ""})
-				.row
 					+input({mclass: "", name: "", type: "text", placeholder: "ДД.ММ.ГГГГ"})
-			.row.mt35
 				+form-group({title: "", note: " "})
-				.row.flex
 					.col-2x.w150
 						+date-dropdown( [{mclass: "w150",label:'date dropdown', placeholder: "ДД.ММ.ГГГГ"}])
 					.col-2x.w150
 						+date-dropdown([{mclass: "w150",label:"date dropdown", placeholder: "19 авг - 23 авг"}])
-			.row.mt40
 				+form-group({title: "filter date dropdown", note: ""})
-				.row.w266.mt-4
 					+date-dropdown([{mclass: "",label:"", placeholder: "19 авг - 23 авг"}])
-			.row.mt40
 				+form-group({title: "Subscription Text field", note: ""})
-				.row.w266
 					+input({mclass: '', placeholder: "Email", icon: ""})
-
-		.col-3x.w320.ml126
-			.row
+			.col-3x
 				+form-group({title: "checkbox buttons", note: ""})
-				.row
 					+checkbox({type: "checkbox" }, [{label: "Можно курить" }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)", checked: true} ])
-			.row.mt40
 				+form-group({title: "radio buttons", note: ""})
-				.row.inline.mt20
 					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }])
 					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Женщина"} ])
-			.row.mt35
 				+form-group({title: "toggle", note: ""})
-				.row
-					.mt14
-						+toggle({label: "Получать спецпредложения", checked: false })
-					.mt8
-						+toggle({label: "Получать спецпредложения", checked: true })
-			.row.mt40
+					+toggle({label: "Получать спецпредложения", checked: false })
+					+toggle({label: "Получать спецпредложения", checked: true })
 				+form-group({title: "like button", note: ""})
-				.mt14
-				//  переделать на единичные
-				+like-buttons({type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
-			.row.mt40
+					//  переделать на единичные
+					+like-buttons({type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
 				+form-group({title: "rate button", note: ""})
-				.row.mt14
 					+rate-button([{rate: 4},{rate: 5}])
-		.col-3x.ml72
-			.row
+			.col-3x
 				+range-slider({title: "range slider", note: "", unit: "₽", from: 5000, to: 10000, max: 15000, description: ""})
-			.row.mt40
 				+form-group({title: "buttons", note: ""})
-				.row.mt14
 					+button({name: "CLICK ME", class: "withbg", size: "w99h44", hovered: false})
 					+button({name: "CLICK ME", class: "withbg", size: "w99h44", hovered: true })
-				.row.mt35
-					+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: false})
-					+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: true})
-				.row.mt35
-					+button({name: "CLICK ME", class: "simple"})
-					+button({name: "CLICK ME", class: "simple"})
-				.row.mt35
-					+button({name: "Перейти к оплате", class: "withbg", size: "w320h44", hovered: false})
-				.row
-					+form-group({title: "pagination", note: ""})
 					.row
-						+pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})
+						+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: false})
+						+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: true})
+					.row
+						+button({name: "CLICK ME", class: "simple"})
+						+button({name: "CLICK ME", class: "simple"})
+		//- 		.row.mt35
+		//- 			+button({name: "Перейти к оплате", class: "withbg", size: "w320h44", hovered: false})
+		//- 		.row
+		//- 			+form-group({title: "pagination", note: ""})
+		//- 			.row
+		//- 				+pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})
 
-			.col-3x.mr126
-				.row
-					+form-group({title: "Dropdown", note: "default"})
-					.row
-						+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown2', type: 'text',
-						placeholder: "2 спальни, 2 кровати", items: items1 , buttons: false, id:"block2" })
-				.row
-					+form-group({title: "Dropdown", note: "expanded"})
-					.row
-						+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown3', type: 'text',
-							placeholder: "2 спальни, 2 кровати", items: items1, inline: true, id:"block3" })
-			.col-3x.mr74
-				+form-group({title: "Dropdown", note: ""})
-				.row
-					+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown4', type: 'text',
-						placeholder: "Сколько гостей ", items: items, inline: true, id:"block4", buttons: true  })
-			.col-3x
-				+form-group({title: "Dropdown", note: ""})
-				.row
-					+input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown-group__input", 
-						name: 'dropdown5', type: 'text',
-						placeholder: "Сколько гостей ", items: items , inline: true, id:"block5", buttons: true })
-			.col-3x
-				.row
-					+form-group({title: "expandable checkbox list", note: ""})
-					//- +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
-					//- 	{label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
-				.row
-					+form-group({title: "expandable checkbox list", note: "", inline: true})
-					+checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true}, {label: "кроватка", checked: true}, {label: "телевизор", checked: false}, {label: "шампунь", checked: false}])
-			//- .col-3x
-			//- 	.row
-			//- 		+form-group({title: "rich checkbox buttons", note: " "})
-			//- 		+checkbox( {type: "checkbox"}, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
-			//- .col-3x
-			//- 	.row
-			//- 		+form-group({title: "bullet list", note: ""}) 
-			//- 		+bullet-list([{rule: "Нельзя с питомцами"}, {rule: "Без вечеринок и мероприятий"}, {rule: "Время прибытия — после 13:00, а выезд до 12:00"}])
-			//- .col-3x
-			//- 		+pluses([{icon: "./img/insert_emoticon.png", title:"Комфорт", text:"Шумопоглощающие стены"}, {icon: "./img/location_city.png", title:"Удобство", text:"окно в каждой из спален"}])        
-			//- .col-3x-2x
-			//- 		+comment({author: "Мурад Сарафанов", timeAgo: "5 дней назад", text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+		//- 	.col-3x.mr126
+		//- 		.row
+		//- 			+form-group({title: "Dropdown", note: "default"})
+		//- 			.row
+		//- 				+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown2', type: 'text',
+		//- 				placeholder: "2 спальни, 2 кровати", items: items1 , buttons: false, id:"block2" })
+		//- 		.row
+		//- 			+form-group({title: "Dropdown", note: "expanded"})
+		//- 			.row
+		//- 				+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown3', type: 'text',
+		//- 					placeholder: "2 спальни, 2 кровати", items: items1, inline: true, id:"block3" })
+		//- 	.col-3x.mr74
+		//- 		+form-group({title: "Dropdown", note: ""})
+		//- 		.row
+		//- 			+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown4', type: 'text', placeholder: "Сколько гостей ", items: items, inline: true, id:"block4", buttons: true  })
+		//- 	.col-3x
+		//- 		+form-group({title: "Dropdown", note: ""})
+		//- 		.row
+		//- 			+input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown-group__input", name: 'dropdown5', type: 'text', placeholder: "Сколько гостей ", items: items , inline: true, id:"block5", buttons: true })
+		//- 	.col-3x
+		//- 		.row
+		//- 			+form-group({title: "expandable checkbox list", note: ""})
+		//- 			.row
+		//- 				+checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},	{label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
+		//- 		.row
+		//- 			+form-group({title: "expandable checkbox list", note: "", inline: true})
+		//- 			+checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true}, {label: "кроватка", checked: true}, {label: "телевизор", checked: false}, {label: "шампунь", checked: false}])
+		//- 	.col-3x
+		//- 		.row
+		//- 			+form-group({title: "rich checkbox buttons", note: " "})
+		//- 			+checkbox( {type: "checkbox"}, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
+		//- 	.col-3x
+		//- 		.row
+		//- 			+form-group({title: "bullet list", note: ""}) 
+		//- 			+bullet-list([{rule: "Нельзя с питомцами"}, {rule: "Без вечеринок и мероприятий"}, {rule: "Время прибытия — после 13:00, а выезд до 12:00"}])
+		//- 	.col-3x
+		//- 			+pluses([{icon: "./img/insert_emoticon.png", title:"Комфорт", text:"Шумопоглощающие стены"}, {icon: "./img/location_city.png", title:"Удобство", text:"окно в каждой из спален"}])        
+		//- 	.col-3x-2x
+		//- 			+comment({author: "Мурад Сарафанов", timeAgo: "5 дней назад", text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
